@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Montessori School of Central Marin — website
 
-## Getting Started
+Modern rebuild of [montessoricentralmarin.org](http://www.montessoricentralmarin.org) as a Next.js 16 (App Router) + Tailwind CSS v4 site. All pages are statically prerendered.
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | What |
+| --- | --- |
+| `src/lib/site.ts` | **All site content in one place**: contact info, hours, nav, events, programs, curriculum, enrichment, gallery, admissions steps, PDF links. Edit copy here. |
+| `src/app/` | Routes: `/`, `/our-school`, `/programs`, `/curriculum`, `/admissions`, `/contact`, plus `sitemap.xml`, `robots.txt`, favicon (`icon.jpg`). |
+| `src/components/PageHero.tsx` | Shared banner frame: content-hugging height, left-justified type with a matching gradient, focal-point `object-position`, media plane capped at 1600px with navy fill beyond. |
+| `src/components/` | Header (sticky, mobile menu), footer, sticky mobile call/map/tour bar, tour request form, event list, CTA band. |
+| `src/app/globals.css` | Brand tokens (navy, sun gold, sage, cream), fonts (Fraunces + Figtree), two motions (hero rise-in, scroll reveal). |
+| `public/brand/` | Original school logo, AMS logo, Pacific Sun Best of Marin 2026 badge. |
+| `public/images/` | Photos. `hero-children-original.jpg` is the original 775px hero; `hero-children-wide.png` is the AI-extended version used on the home page. `hero-*.png` interior banners are AI-generated Montessori environment images (no people). Classroom gallery JPGs are AI-restored from the school's original photos. |
+| `public/docs/` | Calendar, application, enrollment, re-enrollment, and tuition PDFs from the old site. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tour request form
 
-## Learn More
+`src/app/contact/actions.ts` is a server action that emails tour requests via [Resend](https://resend.com) (no SDK — plain `fetch`). Set these environment variables (see `.env.example`):
 
-To learn more about Next.js, take a look at the following resources:
+- `RESEND_API_KEY` — required for delivery.
+- `CONTACT_TO_EMAIL` — defaults to the school office address.
+- `CONTACT_FROM_EMAIL` — a verified sender on your Resend domain.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Without `RESEND_API_KEY` the form shows a friendly "please call or email" message instead of pretending to send.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Updating content
 
-## Deploy on Vercel
+- **Events**: edit the `events` array in `src/lib/site.ts`.
+- **New school year PDFs**: drop files in `public/docs/` and update `docs` in `src/lib/site.ts`.
+- **Photos**: replace files in `public/images/` (keep names). Curriculum still uses the ~300px images from the old site.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploying
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Standard Next.js — deploys to Vercel with zero config. Point the `montessoricentralmarin.org` domain at the project when ready.
