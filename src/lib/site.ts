@@ -236,12 +236,12 @@ export const afterSchool = [
 ] as const;
 
 export const gallery = [
-  { src: "/images/guide-and-child.jpg", alt: "A teacher guides a child through a tray activity" },
-  { src: "/images/child-writing.jpg", alt: "A child writes carefully with a red pencil" },
-  { src: "/images/knobbed-cylinders.jpg", alt: "A child works with knobbed cylinders" },
-  { src: "/images/garden-friends.jpg", alt: "Children and a teacher with a rabbit in the garden" },
-  { src: "/images/child-painting.jpg", alt: "A child paints at an easel" },
-  { src: "/images/garden-lemon-tree.jpg", alt: "A teacher shows children lemons on the lemon tree" },
+  { src: "/images/gallery-guide-and-child.jpg", alt: "A teacher guides a child through a tray activity" },
+  { src: "/images/gallery-child-writing.jpg", alt: "A child writes carefully with a red pencil" },
+  { src: "/images/gallery-knobbed-cylinders.jpg", alt: "A child works with knobbed cylinders" },
+  { src: "/images/gallery-garden-friends.jpg", alt: "Children and a teacher with a rabbit in the garden" },
+  { src: "/images/gallery-child-painting.jpg", alt: "A child paints at an easel" },
+  { src: "/images/gallery-garden-lemon-tree.jpg", alt: "A teacher shows children lemons on the lemon tree" },
 ] as const;
 
 export const admissionSteps = [

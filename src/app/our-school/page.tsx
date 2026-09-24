@@ -49,10 +49,10 @@ export default function OurSchoolPage() {
           </div>
           <div className="grid gap-4 self-start sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image src="/images/garden-friends.jpg" alt="Children and a teacher gathered around a rabbit in the garden" fill sizes="(min-width: 1024px) 35vw, 50vw" className="object-cover" />
+              <Image src="/images/gallery-garden-friends.jpg" alt="Children and a teacher gathered around a rabbit in the garden" fill quality={90} sizes="(min-width: 1024px) 35vw, 50vw" className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image src="/images/child-painting.jpg" alt="A child painting at an easel" fill sizes="(min-width: 1024px) 35vw, 50vw" className="object-cover" />
+              <Image src="/images/gallery-child-painting.jpg" alt="A child painting at an easel" fill quality={90} sizes="(min-width: 1024px) 35vw, 50vw" className="object-cover" />
             </div>
           </div>
         </div>

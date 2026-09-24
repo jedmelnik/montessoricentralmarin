@@ -182,7 +182,8 @@ export default function HomePage() {
                 src={g.src}
                 alt={g.alt}
                 fill
-                sizes="(min-width: 768px) 30vw, 50vw"
+                quality={90}
+                sizes="(min-width: 1024px) 380px, (min-width: 768px) 33vw, 50vw"
                 className="object-cover"
               />
             </li>

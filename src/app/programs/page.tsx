@@ -70,7 +70,7 @@ export default function ProgramsPage() {
           <div className="lg:col-span-5">
             <SectionHeading kicker="Schedule" title="A typical day" />
             <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image src="/images/guide-and-child.jpg" alt="A teacher guides a child through a tray activity" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+              <Image src="/images/gallery-guide-and-child.jpg" alt="A teacher guides a child through a tray activity" fill quality={90} sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
             </div>
           </div>
           <ol className="lg:col-span-7">
